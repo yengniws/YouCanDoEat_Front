@@ -12,7 +12,7 @@ export const InfoContext = createContext({
 
 export default function InfoContextProvider({children}){
 
-  const [totalBurnedCalories, setTotalBurnedCalories] = useState(9);
+  const [totalBurnedCalories, setTotalBurnedCalories] = useState(0);
   const [weight, setWeight] = useState(0);
   const [foodName, setFoodName] = useState("");
   const [foodCalories, setFoodCalories] = useState(0);

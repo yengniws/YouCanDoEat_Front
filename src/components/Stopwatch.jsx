@@ -20,27 +20,20 @@ export default function Stopwatch ({onSet}) {
   const [elapsedTime, setElapsedTime] = useState(0);
   const stopwatch = useRef();
 
-  // useEffect(() => {
-  //   if (isRunning) {
-  //     // milliseconds update
-  //     stopwatch.current = setInterval(() => {
-  //       setElapsedTime(prevTime => prevTime + 100);
-  //     }, 100);
-  //   }
-
-  //   return () => clearInterval(stopwatch.current);
-  // }, [isRunning]);
-
-  const handleStartStop = () => {
-    console.log('Timer has started or stopped');
-    setIsRunning(!isRunning);
-    if(isRunning){
-      clearInterval(stopwatch.current);
-    } else{
+  useEffect(() => {
+    if (isRunning) {
+      // milliseconds update
       stopwatch.current = setInterval(() => {
         setElapsedTime(prevTime => prevTime + 100);
       }, 100);
     }
+
+    return () => clearInterval(stopwatch.current);
+  }, [isRunning]);
+
+  const handleStartStop = () => {
+    console.log('Timer has started or stopped');
+    setIsRunning(!isRunning);
   };
 
   const handleReset = () => {
@@ -52,13 +45,13 @@ export default function Stopwatch ({onSet}) {
 
   // seconds given in milliseconds
   const formatTime = (time) => {
-    const hours = Math.floor(time / 3600000);
+    const hours = Math.floor(time / 360000);
 
     // Minutes calculation
-    const minutes = Math.floor((time % 3600000) / 60000);
+    const minutes = Math.floor((time % 360000) / 6000);
 
     // Seconds calculation
-    const seconds = Math.floor((time % 60000) / 1000);
+    const seconds = Math.floor((time % 6000) / 100);
 
     const formattedHours = String(hours).padStart(2, '0');
     const formattedMinutes = String(minutes).padStart(2, '0');
@@ -77,3 +70,4 @@ export default function Stopwatch ({onSet}) {
     </StyledStopwatch>
   );
 };
+

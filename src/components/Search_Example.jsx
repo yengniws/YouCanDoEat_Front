@@ -90,6 +90,23 @@ const mockAPI = {
       { id: 1, name: '피자', cal: 800, fat: 20, carb: 120, protein: 30 },
       { id: 2, name: '스테이크', cal: 600, fat: 30, carb: 10, protein: 40 },
       { id: 3, name: '샐러드', cal: 200, fat: 5, carb: 15, protein: 10 },
+      { id: 4, name: '파스타', cal: 700, fat: 25, carb: 90, protein: 20 },
+      { id: 5, name: '햄버거', cal: 900, fat: 35, carb: 80, protein: 25 },
+      { id: 6, name: '스시', cal: 500, fat: 15, carb: 60, protein: 35 },
+      { id: 7, name: '치킨', cal: 1000, fat: 40, carb: 10, protein: 50 },
+      { id: 8, name: '라면', cal: 400, fat: 10, carb: 70, protein: 15 },
+      { id: 9, name: '초밥', cal: 600, fat: 20, carb: 50, protein: 40 },
+      { id: 10, name: '감바스', cal: 300, fat: 15, carb: 20, protein: 25 },
+      { id: 11, name: '토스트', cal: 350, fat: 10, carb: 40, protein: 15 },
+      { id: 12, name: '감자튀김', cal: 450, fat: 25, carb: 40, protein: 5 },
+      { id: 13, name: '커피', cal: 100, fat: 5, carb: 10, protein: 1 },
+      { id: 14, name: '아이스크림', cal: 250, fat: 15, carb: 30, protein: 5 },
+      { id: 15, name: '과일샐러드', cal: 150, fat: 2, carb: 35, protein: 3 },
+      { id: 16, name: '갈비구이', cal: 700, fat: 35, carb: 15, protein: 45 },
+      { id: 17, name: '스프', cal: 120, fat: 5, carb: 15, protein: 4 },
+      { id: 18, name: '순대국', cal: 300, fat: 15, carb: 20, protein: 10 },
+      { id: 19, name: '훈제연어', cal: 350, fat: 20, carb: 5, protein: 40 },
+      { id: 20, name: '샌드위치', cal: 500, fat: 25, carb: 40, protein: 15 },
     ];
 
     const filteredFoods = foods.filter(food => food.name.toLowerCase().includes(query.toLowerCase()));
