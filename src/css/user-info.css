@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'kor';
+  src: url('/src/Fonts/Apple_산돌고딕_Neo/AppleSDGothicNeoUL.ttf') format('truetype');
+  font-family: 'num';
+}
+
+@font-face {
+  font-family: 'num';
+  src: url('/src/Fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Light.ttf') format('truetype');
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: black;
+  margin: auto 0;
+  display: flex;
+  place-items: inherit;
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  font-family: 'kor';
+}
+
+.UserInfoWrap {
+  font-size: 30px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+p {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+.inputval {
+  padding: 15px 0px;
+}
+
+input {
+  border-radius: 20px;
+  width: 400px;
+  height: 70px;
+  border: none;
+  font-size: 30px;
+  margin: 10px;
+  font-weight: bold;
+  font-family: 'num';
+}
+
+.height,
+.weight,
+.age {
+  border: 2px solid rgb(224, 224, 224);
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  margin-top: 40px;
+  width: 200px;
+  height: 50px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn {
+  text-decoration: none;
+  color: black;
+}
+
+button:hover {
+  background-color: blue;
+  color: white;
+}
+
+select {
+  width: 405px;
+  height: 70px;
+  border-radius: 20px;
+  border: 2px solid rgb(224, 224, 224);
+  font-size: 20px;
+  margin: 10px;
+  font-family: 'kor';
+}
+
+select:focus {
+  outline: none;
+}
