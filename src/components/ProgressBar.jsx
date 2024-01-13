@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext, useRef } from "react"
 import { InfoContext } from "../personal-info-context";
 import AcheivedModal from "./AcheivedModal";
+import Modal from "./Modal";
 import trophyImg from "../assets/img/trophy.png"
 import styled from "styled-components";
 
@@ -51,23 +52,19 @@ export default function ProgressBar(){
   const {totalBurnedCalories, foodCalories, foodName} = useContext(InfoContext);
   const [burnedPercentage, setBurnedPercentage] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
+  const modal = useRef();
 
   function handleOpenTrophyClick(){
-    setModalOpen(true);
-    console.log(modalOpen);
+    modal.current.open();
   }
 
-  function handleCloseModal(){
-    setModalOpen(false);
-  }
   // 지금 원하는 바는 totalBurnedCalories가 바뀔때마다, 이 progressbar이 update되기를 
   useEffect(() => {
     console.log(totalBurnedCalories);
     const newPercentage = totalBurnedCalories / foodCalories * 100;
   
     if(newPercentage >= 100) {
-      setFinished(true);
+      handleOpenTrophyClick();
       console.log("You are done!");
     }
     setBurnedPercentage(newPercentage);
@@ -75,9 +72,11 @@ export default function ProgressBar(){
 
   return (
     <>
-      {modalOpen &&  <AcheivedModal 
-        foodName={foodName}
-        onSet={handleCloseModal}/> }
+      <Modal ref={modal}>
+        <AcheivedModal 
+          foodName={foodName}
+          /> 
+      </Modal>
       <StyledProgressBar>
         <Progress value={burnedPercentage} max={100}/>
         <TrophyImage src={trophyImg} alt="trophyimg" />

@@ -1,8 +1,9 @@
-
-import { useState, useContext } from 'react';
+import { useState, useContext, useRef } from 'react';
 import { InfoContext } from '../personal-info-context';
 import Stopwatch from './Stopwatch';
 import styled from 'styled-components';
+import Modal from './Modal';
+import LargerExercise from './LargerExercise';
 
 
 const ExerciseContainer = styled.div`
@@ -49,11 +50,16 @@ const StyledStopwatch = styled.div`
   margin-top: 20px;
 `;
 
-export default function Exercise({name, image, met}){
+export default function Exercise({name, image, met, description, image_real}){
 
   // 원래는 prop으로 받은 pic를 가져와서 src로 설정하기 
   // 여기서 이제 칼로리 계산을 전부 해야 한다. 
   const { weight, addBurnedCal } = useContext(InfoContext);
+  const modal = useRef();
+
+  function handleClickExercise(){
+    modal.current.open();
+  }
 
   function calculateCalories(met){
     return (met * weight * 3.5 * 60 / 200).toFixed(2);
@@ -68,11 +74,19 @@ export default function Exercise({name, image, met}){
     // 해당 운동에 따른 칼로리 소모가 기록됨
     addBurnedCal(caloriesBurned);
   };
+
   
   return (
-    <ExerciseContainer>
+    <>
+    <Modal ref={modal}>
+      <LargerExercise
+        name={name}
+        description={description}
+        image={image_real}/>
+    </Modal>
+      <ExerciseContainer>
       <InfoContainer>
-        <ImgContainer>
+        <ImgContainer onClick={handleClickExercise}>
           <Icon src={image} alt="running-icon"/>
         </ImgContainer>
         <TextContainer>
@@ -84,5 +98,6 @@ export default function Exercise({name, image, met}){
         <Stopwatch onSet={handleExerciseTime}/>
       </StyledStopwatch>
     </ExerciseContainer>
+    </>
   )
 }

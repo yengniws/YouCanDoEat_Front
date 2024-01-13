@@ -37,7 +37,9 @@ export default function MainPage(){
               key={exercise.id}
               name={exercise.name}
               image={exercise.image}
-              met={exercise.met}/>
+              met={exercise.met}
+              image_real={exercise.image_real}
+              description={exercise.description}/>
           </li>)}
       </ListedExercises>
     </StyledMainPage>
