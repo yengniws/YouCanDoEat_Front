@@ -17,6 +17,7 @@ import soccer_real from "./assets/archive/soccer_real.jpeg";
 import cycle_real from "./assets/archive/cycle_real.jpeg";
 import walking_real from "./assets/archive/walking_real.jpeg";
 
+
 export const EXERCISES_INFO = [{
         id: "running",
         image: running,
