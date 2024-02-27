@@ -6,6 +6,7 @@
     height: 60%;
     overflow: hidden;
     background-color: #d7fcf8;
+    //modal
 }
 
 .result-modal[open] {
