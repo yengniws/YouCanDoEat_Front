@@ -21,11 +21,11 @@ YouCanDoEat에 입장!
 
 ![image](https://github.com/yengniws/YouCanDoEat_Front/assets/97573092/dee69f82-fbec-4bae-9aba-53bf6a3a036c)
 
-각 운동별로 상세한 정보도 제공됩니다
+각 운동별로 상세한 정보도 제공됩니다 !
 
 ![image](https://github.com/yengniws/YouCanDoEat_Front/assets/97573092/8b098006-3042-4205-af3a-5ff98cb4e214)
 
-파란색 프로그래스 바가 우리가 먹고 싶은 음식까지 얼마나 남았는 지를 보여줍니다
+파란색 프로그래스 바가 우리가 먹고 싶은 음식까지 얼마나 남았는 지를 보여줍니다 !
 
 <img width="720" alt="image" src="https://github.com/yengniws/YouCanDoEat_Front/assets/97573092/4715b52e-c4d7-438b-8a08-0431a0fb4ef7">
 
